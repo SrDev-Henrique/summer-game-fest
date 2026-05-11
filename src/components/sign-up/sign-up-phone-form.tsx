@@ -31,7 +31,7 @@ export function SignUpPhoneForm() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     toast.custom((t) => (
       <Toaster
-        message="E-mail cadastrado com sucesso."
+        message="Telefone cadastrado com sucesso."
         error={false}
         onClick={() => toast.dismiss(t)}
       />

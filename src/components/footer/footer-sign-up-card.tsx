@@ -59,7 +59,7 @@ export function FooterSignUpCard({
     await new Promise((resolve) => setTimeout(resolve, 800));
     toast.custom((t) => (
       <Toaster
-        message="You're signed up for updates."
+        message="E-mail cadastrado com sucesso."
         error={false}
         onClick={() => toast.dismiss(t)}
       />
