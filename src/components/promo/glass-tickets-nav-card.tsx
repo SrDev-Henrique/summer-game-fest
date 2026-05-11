@@ -90,7 +90,7 @@ export function GlassTicketsNavCard({
             className="size-6 shrink-0 text-primary-foreground"
             aria-hidden
           />
-          Get tickets
+          Comprar ingressos
         </Link>
       </div>
     </article>

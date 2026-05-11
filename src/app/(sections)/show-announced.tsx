@@ -78,7 +78,8 @@ export function ShowAnnounced() {
           autoPlay
           muted
           loop
-          className="size-full object-cover"
+          playsInline
+          className="pointer-events-none size-full object-cover"
         />
       </div>
       <div className="-left-8 -translate-y-1/2 absolute bottom-1/7 hidden size-50 overflow-hidden rounded-full lg:block">
@@ -87,7 +88,8 @@ export function ShowAnnounced() {
           autoPlay
           muted
           loop
-          className="size-full object-cover"
+          playsInline
+          className="pointer-events-none size-full object-cover"
         />
       </div>
     </section>

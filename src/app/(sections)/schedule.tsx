@@ -38,7 +38,7 @@ export function Schedule() {
           Adicionar todos os eventos
         </div>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-x-2 gap-y-4 md:mt-14 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-10 grid grid-cols-1 place-items-center gap-x-2 gap-y-4 sm:grid-cols-2 md:mt-14 md:grid-cols-3 lg:grid-cols-4">
         {eventImages.map(({ src, stem }, index) => {
           const meta = metaForScheduleEvent(stem);
           return (

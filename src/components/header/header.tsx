@@ -21,7 +21,7 @@ export function Header() {
   const pathname = usePathname();
   const isButtonActive = (path: string) => pathname === path;
   return (
-    <header className="-translate-x-1/2 container fixed top-6 left-1/2 z-150 h-17 rounded-full border bg-background backdrop-blur-sm">
+    <header className="-translate-x-1/2 container fixed top-6 left-1/2 z-350 h-17 rounded-full border bg-background backdrop-blur-sm">
       <div className="relative flex size-full items-center justify-between gap-6 p-2">
         <div className="hidden h-17 w-fit items-center py-2 lg:flex">
           <Link href="/" className="h-full">
@@ -46,7 +46,7 @@ export function Header() {
         <HambugerMenu />
         <Link
           href="/"
-          className="-translate-x-1/2 absolute left-1/2 flex h-17 cursor-pointer items-center gap-2"
+          className="-translate-x-full sm:-translate-x-1/2 absolute left-1/2 flex h-17 w-fit cursor-pointer items-center gap-2"
         >
           {icons.map(({ id, Icon }) => (
             <Icon key={id} size={26} color="#2f1efc" />

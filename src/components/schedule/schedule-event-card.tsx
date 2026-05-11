@@ -32,7 +32,7 @@ export function ScheduleEventCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full min-h-0 w-full max-w-md flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background shadow-sm hover:shadow-lg",
+        "group relative flex h-full min-h-[390px] w-full max-w-md flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background shadow-sm hover:shadow-lg",
         className,
       )}
     >

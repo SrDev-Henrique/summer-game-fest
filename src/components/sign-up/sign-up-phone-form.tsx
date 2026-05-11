@@ -14,8 +14,29 @@ import {
 import { Input } from "../ui/input";
 import { ShinyButton } from "../ui/shiny-button";
 
+/** Brazilian phone: (DD) NNNNN-NNNN or (DD) NNNN-NNNN — max 11 digits. */
+function maskBrazilianPhone(raw: string): string {
+  const digits = raw.replace(/\D/g, "").slice(0, 11);
+  if (digits.length === 0) return "";
+  if (digits.length <= 2) return `(${digits}`;
+  if (digits.length <= 6)
+    return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  if (digits.length <= 10)
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
 const signUpPhoneSchema = z.object({
-  phone: z.string().min(1, "Informe seu telefone."),
+  phone: z
+    .string()
+    .min(1, "Informe seu telefone.")
+    .refine(
+      (val) => {
+        const n = val.replace(/\D/g, "").length;
+        return n >= 10 && n <= 11;
+      },
+      "Informe um telefone válido com DDD.",
+    ),
 });
 
 type SignUpPhoneValues = z.infer<typeof signUpPhoneSchema>;
@@ -57,7 +78,13 @@ export function SignUpPhoneForm() {
                     autoComplete="tel"
                     placeholder="(11) 99999-9999"
                     className="border-none focus-visible:ring-0 focus-visible:ring-offset-0"
-                    {...field}
+                    name={field.name}
+                    ref={field.ref}
+                    onBlur={field.onBlur}
+                    value={field.value}
+                    onChange={(e) =>
+                      field.onChange(maskBrazilianPhone(e.target.value))
+                    }
                   />
                 </FormControl>
                 <ShinyButton type="submit">
