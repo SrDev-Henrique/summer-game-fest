@@ -147,9 +147,3 @@ npx biome check --write .   # aplica fixes seguros
 ## Licença e contexto acadêmico
 
 Projeto **privado / educacional** (`"private": true` no `package.json`). Arte e naming inspiram festivais da indústria de games; uso didático EBAC — respeitar direitos das marcas ao publicar forks.
-
----
-
-## Contato no material de entrevista
-
-Sugestão ao candidato: mencionar **esta pasta** ao vivo no editor (`schedule-event-images.ts`, `events/[event]/page.tsx`, `EventCountdown`) e executar **`npm run build`** para demonstrar SSG funcionando na linha de comando.
