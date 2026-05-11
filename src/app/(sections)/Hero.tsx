@@ -1,30 +1,43 @@
 import Image from "next/image";
+import { ReminderButton } from "@/components/reminder-button";
+import { HeroDate } from "../../components/hero/hero-date";
+import { HeroDecoration } from "../../components/hero/hero-decoration";
 
 export function Hero() {
   return (
-    <div
-      style={{
-        backgroundImage: "url(/assets/images/hero.webp)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      className="relative h-screen w-full pt-27"
+    <section
+      aria-labelledby="hero-heading"
+      className="relative h-screen w-full overflow-hidden pt-27"
     >
+      <Image
+        src="/assets/images/hero.webp"
+        alt="Summer Game Fest 2026"
+        fill
+        preload
+        sizes="100vw"
+        aria-hidden="true"
+        className="-z-10 object-cover object-center"
+      />
+
+      <div className="sr-only">
+        <h1 id="hero-heading">Summer Game Fest 2026</h1>
+        <p>
+          Anúncios, revelações e novidades dos maiores estúdios de games ao
+          vivo em 5 de junho de 2026.
+        </p>
+      </div>
+
       <div className="container h-full pb-6 md:pb-16 lg:pb-24">
-        <div className="flex size-full flex-col gap-6 md:gap-16 lg:gap-24">
-          <div className="flex w-full items-center justify-between gap-4">
-            <div className="relative aspect-square size-[25vw] min-w-[180px] max-w-[350px]">
-              <Image
-                src="/assets/images/68f06dcc9c70b112b52ecb4e_JUNE 5 2026.svg"
-                alt="5 de Junho de 2026"
-                fill
-                className="size-full object-contain object-center"
-                sizes="(max-width: 768px) 100vw, 1500px"
-              />
+        <div className="flex size-full items-end md:items-center">
+          <div className="flex h-[70vh] min-h-[370px] w-full items-center justify-between gap-4 lg:min-h-[500px]">
+            <HeroDate />
+            <div className="-ml-4 mb-6 self-end rounded-full bg-transparent p-2.5 backdrop-blur-sm backdrop-brightness-110 md:ml-0">
+              <ReminderButton />
             </div>
+            <HeroDecoration />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

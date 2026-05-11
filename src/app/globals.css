@@ -206,6 +206,38 @@
       0 1px 20px oklch(0.708 0 0 / 0.05),
       0 1px 3px oklch(0.708 0 0 / 0.05);
   }
+
+  .glass-pill-bg {
+    color: #2563eb;
+    background-color: transparent;
+    background-image: radial-gradient(
+      circle at center,
+      #ffffffbf 50%,
+      oklch(0.708 0 0) 180%
+    );
+    background-size: 110% 200%;
+    background-position: 50% 5%;
+    background-repeat: no-repeat;
+    border: 1px solid oklch(0.708 0 0 / 0.05);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      0 1px 20px oklch(0.708 0 0 / 0.05),
+      0 1px 3px oklch(0.708 0 0 / 0.05);
+  }
+
+  .bg-blue-cta {
+    background-image: linear-gradient(190deg, #4d8fe8 0%, #2f1efc 60%);
+    box-shadow:
+      0 6px 18px -6px rgb(47 30 252 / 0.55),
+      0 2px 4px -1px rgb(47 30 252 / 0.25),
+      inset 0 1px 0 0 rgb(255 255 255 / 0.18);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .bg-blue-cta:hover {
+    background-image: linear-gradient(190deg, #5b9cf5 0%, #3a2afd 60%);
+  }
 }
 
 @property --gradient-angle {

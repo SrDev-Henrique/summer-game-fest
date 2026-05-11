@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-import { Header } from "@/components/header";
+import { Footer } from "@/components/footer/footer";
+import { Header } from "@/components/header/header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
@@ -40,10 +41,13 @@ export default function RootLayout({
         inter.variable,
       )}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-dvh flex-col">
         <Header />
-        <TooltipProvider>{children}</TooltipProvider>
-        <Toaster />
+        <TooltipProvider>
+          <div className="flex min-h-0 min-w-0 flex-1 flex-col">{children}</div>
+        </TooltipProvider>
+        <Footer />
+        <Toaster position="top-right" />
       </body>
     </html>
   );
